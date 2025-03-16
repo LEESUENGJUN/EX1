@@ -10,30 +10,37 @@ int main() {
         return 1;
     }
 
-    int t = (num / 1000) % 10;  
-    int h = (num / 100) % 10;   
-    int s = (num / 10) % 10;    
-    int i = num % 10;           
+    int t = num / 1000;        
+    int h = (num / 100) % 10;  
+    int s = (num / 10) % 10;   
+    int i = num % 10;          
 
-    int hasOutput = 0; 
-    }
+    int hasOutput = 0;
     if (t != 0) {
-        printf("%d천 ", t);
+        if (t == 1)
+            printf("천 ");
+        else
+            printf("%d천 ", t);
         hasOutput = 1;
     }
     if (h != 0) {
-        printf("%d백 ", h);
+        if (h == 1)
+            printf("백 ");
+        else
+            printf("%d백 ", h);
         hasOutput = 1;
     }
     if (s != 0) {
-        printf("%d십 ", s);
+        if (s == 1)
+            printf("십 ");
+        else
+            printf("%d십 ", s);
         hasOutput = 1;
     }
     if (i != 0) {
         printf("%d", i);
         hasOutput = 1;
     }
-
     if (!hasOutput) {
         printf("0");
     }
