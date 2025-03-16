@@ -2,25 +2,20 @@
 
 int main() {
     int num;
-    printf("입력 (0 ~ 99999): ");
+    printf("입력 (0 ~ 9999): ");
     scanf("%d", &num);
 
-    if (num < 0 || num >= 100000) {
+    if (num < 0 || num >= 10000) {
         printf("error\n");
         return 1;
     }
 
-    int m = num / 10000;        
     int t = (num / 1000) % 10;  
     int h = (num / 100) % 10;   
     int s = (num / 10) % 10;    
     int i = num % 10;           
 
     int hasOutput = 0; 
-
-    if (m != 0) {
-        printf("%d만 ", m);
-        hasOutput = 1;
     }
     if (t != 0) {
         printf("%d천 ", t);
